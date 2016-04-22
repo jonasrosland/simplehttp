@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>Simple persistence demo</title>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+</head>
+<body>
+  <center>
+    <h1>I am a stateless app, connecting to a stateful service</h1></br></br>
+    <h2>I don't know where my database is, so I ask <b>Consul</b> running on:</h2>
+    <h2><b>{{ CONSUL_HOST }}:{{ CONSUL_PORT }}</b></h2></br></br>
+    <h2>Consul tells me that <b>Redis</b> is running on:</h2>
+    <h2><b>{{ redis_address }}:{{ redis_port }}, in datacenter {{ CONSUL_DC }}</b></h2></br></br>
+    <h2>Every time you refresh the page I'll increase the value of the <b>counter</b> key in Redis:</h2>
+    <h2>{{ counter }}</h2>
+  </center>
+</body>
+</html>

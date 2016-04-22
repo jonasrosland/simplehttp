@@ -1,0 +1,10 @@
+---
+applications:
+- name: simple
+  memory: 256MB
+  buildpack: python_buildpack
+  command: python simple.py
+  env:
+    CONSUL_HOST: consul.service.consul
+    CONSUL_PORT: 8500
+    CONSUL_DC: nyc2
